@@ -21,17 +21,16 @@
                     <a href="">
                         <li>About Us</li>
                     </a>
-                    <a href="">
-                        <li>Sign Up Free</li>
+                    <a href="{{ url_for('auth.signup') }}">
+                        <li>Sign Up</li>
                     </a>
-                    <a href="">
+                    <a href="https://www.smithsonianmag.com/innovation/how-pez-evolved-from-anti-smoking-tool-to-beloved-collectors-item-180976545/">
                         <li>History of PEZ</li> 
                     </a> 
                     <a href="">
                         <li>Profile</li>
                     </a>
-                    <!--User Auth Check for SignIn/SignUp Nav Buttons-->
-                    <a href="">
+                    <a href="{{ url_for('auth.signin') }}">
                         <li>Log In</li>
                     </a>
                     <a href="">

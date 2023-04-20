@@ -1,0 +1,4 @@
+.env
+rangers_env
+migrations
+__pycache__
