@@ -14,12 +14,11 @@
 
         <nav class="navbar">
             <div>
-                <img src="../../static/images/pez_in_a_row-header.jpg" alt="PEZ in a row">
-            </div>
-            <div>
                 <ul id="nav-list">
                     <a href="">
                         <li>About Us</li>
+                    <a href="{{ url_for('site.home') }}">
+                            <li>Home</li>
                     </a>
                     <a href="{{ url_for('auth.signup') }}">
                         <li>Sign Up</li>
@@ -27,7 +26,7 @@
                     <a href="https://www.smithsonianmag.com/innovation/how-pez-evolved-from-anti-smoking-tool-to-beloved-collectors-item-180976545/">
                         <li>History of PEZ</li> 
                     </a> 
-                    <a href="">
+                    <a href="{{ url_for('site.profile') }}">
                         <li>Profile</li>
                     </a>
                     <a href="{{ url_for('auth.signin') }}">

@@ -2,18 +2,25 @@
 
 {% block content %}
 
-<header class="hero-section">
-    <h3 class="header-text">Welcome to Coding Drones! test@gmail.com</h3>
-</header>
+<div class="container">
+    <div class="row">
+    <header class="hero-section">
+        <h3 class="header-text">Welcome, {{current_user.username}}!</h3>
+    </header>
+    </div>
+
+    <div class="row" id="prof_img">
+        <div class="col-12">
+            <img src =../static/images/pez-candy.jpg alt="pez-candy" id="ppic">
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <h3>Here are your profile details</h3>
     <ul class="list-group">
-        <li class="list-group-item">Email: test@gmail.com</li>
-        <li class="list-group-item">Token: </li>
-        
-    
-        
+        <li class="list-group-item">Email: {{current_user.email}}</li>
+        <li class="list-group-item">Token: {{ current_user.token }} </li> 
     </ul>
 </div>
 

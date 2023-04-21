@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+  
+    <header class="row" id="profile">
+        <div>
+            <img src="../../static/images/pez_in_a_row-header.jpg" alt="PEZ in a row">
+        </div>
+        <div class="col-md-12" id="header-text">
+            <h2>Welcome to PEZ COLLECTORS UNITED!</h2>
+            <h5>Connect with other PEZ collectors to buy, sell, trade and share fun stories about all things PEZ.</h5>
+        
+            <div>
+                <button class="btn btn-primary">About us</button>
+                <button href="{{ url_for('auth.signup') }}" class="btn btn-primary">Get Started</button>
+            </div> 
+            
+
+    <section class="row" id="middle-section">
+        <div class="col-md-12" id="middle-text">
+            <h2>Display your collection!</h2>
+            <p>Show others what you have, what you're looking for, and set up sell, buy, and trade options!</p>
+        </div>
+
+
+    <footer class="row" id="footer">
+        <div class="col">
+            <img src="../../static/images/mario_pez.jpg" alt="Mario PEZ" id="mario">
+        </div>
+        <div class="col">
+            <div class="footer-text-flex">
+                <h6>Contact Us<h6>
+                <p>some contact info</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="footer-text-flex">
+                <h6>Help</h6>
+                <p>click here for technical issues</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="footer-text-flex">
+                <p>&copyPEZ COLLECTORS UNITED</p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="../../static/images/luigi_pez.png" alt="Luigi PEZ" id="luigi">
+        </div>
+    </footer> 
+</div>
+</div>
+
+{% endblock content %}

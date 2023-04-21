@@ -4,21 +4,36 @@ import uuid
 from datetime import datetime
 from werkzeug.security import generate_password_hash
 import secrets
+from flask_login import UserMixin
+from flask_login import LoginManager
+from flask_marshmallow import Marshmallow
+
 
 db = SQLAlchemy()
 
-class User(db.Model):
+
+login_manager = LoginManager()
+ma = Marshmallow()
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
+
+
+class User(db.Model, UserMixin):
     id = db.Column(db.String, primary_key = True)
     first_name = db.Column(db.String(150), nullable = True, default = '')
     last_name = db.Column(db.String(150), nullable = True, default = '')
-    email = db.Column(db.String(150), nullable = True)
+    email = db.Column(db.String(150), nullable = False)
     password = db.Column(db.String(150), nullable = True, default = '')
     username = db.Column(db.String(150), nullable = False)
     token = db.Column(db.String, default = '', unique = True)
     date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
    
+    # pez = db.relationship('Pez_Dispenser', backref = 'owner', lazy = True)
 
-    def __init__(self, email, username, first_name = '', last_name = '', password = ''):
+    def __init__(self, email, username, password,first_name = '', last_name = ''):
         self.id = self.set_id()
         self.first_name = first_name
         self.last_name = last_name
