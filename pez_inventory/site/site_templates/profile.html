@@ -1,27 +1,50 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block content %}
 
 <div class="container">
     <div class="row">
     <header class="hero-section">
-        <h3 class="header-text">Welcome, {{current_user.username}}!</h3>
+        <h3 class="header-text">Welcome, {{ current_user.username }}!</h3>
+        <main class="container pez_form">
+            <div class="row">
+                <aside class="col-12 col-md-6">
+                    <h2>Create A PEZ!</h2>
+                    {% include 'pez_form.html' %}
+                </aside>
+            </div>
+        </main>
     </header>
     </div>
 
-    <div class="row" id="prof_img">
-        <div class="col-12">
-            <img src =../static/images/pez-candy.jpg alt="pez-candy" id="ppic">
-        </div>
-    </div>
 </div>
 
-<div class="container">
-    <h3>Here are your profile details</h3>
+<div class="container" id="details">
+    <h3>Here are your profile details:</h3>
     <ul class="list-group">
-        <li class="list-group-item">Email: {{current_user.email}}</li>
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
         <li class="list-group-item">Token: {{ current_user.token }} </li> 
     </ul>
+    <div class="row mt-4" id="pez">
+        <h3>These are your PEZ</h3>
+    
+        {% for pez in all_pez %}
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../static/images/pez-candy2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pez.name }} </h5>
+                    <p class="card-text">Year Introduced: {{ pez.year_introduced }}</p>
+                    <p >Description: {{ pez.description }}</p>
+                    <p>{{ pez.random_fact }} </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+
+
+    </div>
 </div>
 
 {% endblock content %}

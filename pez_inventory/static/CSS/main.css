@@ -4,16 +4,28 @@
     justify-content: space-between;
 }
 
-#profile img{
-    width:80%;
-    max-width: 100%;
+
+.hero-section{
+    height: 1000px;
+    background-image:linear-gradient(to right bottom, rgba(30, 115,172, 0.7), rgba(142, 57, 153, 0.6)), url(../images/pez-candy.jpg);
+    background-size: cover;
+    background-position: 35% 50%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path:polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    position: relative;
 }
 
-.ppic{
-    width: 80%;
-    max-width: 100%;
-
+a{
+    color: white;
+    text-decoration: none;
 }
+
+#details{
+margin-top: 10vh;
+margin-bottom: 20vh;
+padding-bottom: 10vh;
+}
+
 
 
 ul#nav-list{
@@ -49,8 +61,6 @@ ul#nav-list li{
 #middle-section{
 display: flex;
 margin-top: 10vh;
-
-
 }
 
 #middle-text{
@@ -95,9 +105,9 @@ margin-top: 10vh;
     display:flex;
     /* justify-content: center; */
     /* align-items: center; */
-    padding-top: 20%;
+    padding-top: 5%;
     left: 20rem;
-    top: 10rem;
+  
     color: white;
 }
 
