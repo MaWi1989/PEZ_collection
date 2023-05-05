@@ -18,7 +18,7 @@ def create_pez(current_user_token):
     description = request.json['description']
     price = request.json['price']
     value = request.json['value']
-    year_intruduced = request.json['year introduced']
+    year_introduced = request.json['year introduced']
     retired = request.json['retired?']
     original_package = request.json['original package?']
     random_fact = random_fact_generator()
@@ -26,7 +26,7 @@ def create_pez(current_user_token):
 
     print(f'BIG TESTER: {current_user_token.token}')
 
-    pez = PEZ(name, series, description, price, value, year_intruduced, retired, original_package, random_fact, user_token = user_token )
+    pez = PEZ(name, series, description, price, value, year_introduced, retired, original_package, random_fact, user_token = user_token )
 
     db.session.add(pez)
     db.session.commit()
