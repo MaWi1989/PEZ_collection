@@ -68,7 +68,7 @@ def update_pez(current_user_token,id):
     pez.description = request.json['description']
     pez.price = request.json['price']
     pez.value = request.json['value']
-    pez.year_introduced = request.json['year intruduced']
+    pez.year_introduced = request.json['year introduced']
     pez.retired = request.json['retired?']
     pez.original_package = request.json['original package?']
     pez.user_token = current_user_token.token
