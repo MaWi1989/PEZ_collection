@@ -25,7 +25,7 @@ def profile():
             description = my_pez.description.data
             price = my_pez.price.data
             value = my_pez.value.data
-            year_intruduced = my_pez.year_introduced.data
+            year_introduced = my_pez.year_introduced.data
             retired = my_pez.retired.data
             original_package = my_pez.original_package.data
             if my_pez.random_fact.data:
@@ -38,7 +38,7 @@ def profile():
                 user_token = user.token
             print(user_token)
 
-            pez = PEZ(name, series, description, price, value, year_intruduced, retired, original_package, random_fact, user_token)
+            pez = PEZ(name, series, description, price, value, year_introduced, retired, original_package, random_fact, user_token)
 
             db.session.add(pez)
             db.session.commit()
@@ -52,5 +52,7 @@ def profile():
     all_pez = PEZ.query.filter_by(user_token=current_user_token)
 
 
-    return render_template('profile.html', form=my_pez, all_pez = all_pez )
+    return render_template('profile.html', form=my_pez, all_pez= all_pez )
+
+
         
